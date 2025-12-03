@@ -3,7 +3,7 @@
 ChromaSave is a simple way to store save data using JSON!
 
 ## Installation
-```
+``` bash
 haxelib install chromasave
 ```
 
