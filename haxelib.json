@@ -1,0 +1,14 @@
+{
+  "name": "ChromaSave",
+  "url" : "https://github.com/Brainy0789/ChromaSave/",
+  "license": "MIT",
+  "tags": ["savedata", "json"],
+  "description": "This library let's you make save data using JSON!! Used for a currently WIP FNF Engine",
+  "version": "1.0.0",
+  "classPath": "src/",
+  "releasenote": "Initial release",
+  "contributors": ["Brainy7890"],
+  "dependencies": {
+
+  }
+}
