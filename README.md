@@ -1,6 +1,6 @@
 # ChromaSave
 
-ChromaSave is a simple way to store save data using JSON!
+ChromaSave is a simple way to store save data using .SAVE!
 
 ## Installation
 ``` bash
