@@ -5,7 +5,7 @@ import sys.FileSystem;
 import sys.io.File;
 import haxe.ds.Map;
 import Reflect;
-import haxe.Json;
+
 
 class ChromaSave
 {
@@ -16,7 +16,7 @@ class ChromaSave
     public function new(save:String)
     {
         saveDir = System.applicationStorageDirectory;
-        saveFile = saveDir + save + ".json";
+        saveFile = saveDir + save + ".save";
 
         if (!FileSystem.exists(saveDir)) {
             FileSystem.createDirectory(saveDir);
