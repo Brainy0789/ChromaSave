@@ -16,7 +16,7 @@ class ChromaSave
     public function new(save:String)
     {
         saveDir = System.applicationStorageDirectory;
-        saveFile = saveDir + save + ".save";
+        saveFile = saveDir + save + ".json";
 
         if (!FileSystem.exists(saveDir)) {
             FileSystem.createDirectory(saveDir);
