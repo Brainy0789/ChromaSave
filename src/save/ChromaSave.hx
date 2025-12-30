@@ -53,7 +53,7 @@ class ChromaSave
     }
 
     public inline function set(key:String, v:Dynamic) data.set(key, v);
-    public inline function get(key:String) data.get(key);
+    public inline function get(key:String) return data.get(key);
 
     public function save():Void {
         write(Json.stringify(data, "\t"));
