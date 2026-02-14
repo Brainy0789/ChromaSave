@@ -10,6 +10,7 @@ import Reflect;
 
 class ChromaSave
 {
+    public var json:Dynamic;
     public var data:Map<String, Dynamic>;
     public var saveFile:String;
     public var saveDir:String;
@@ -46,6 +47,7 @@ class ChromaSave
         }
 
         var parsed:Dynamic = Json.parse(raw);
+        json = parsed;
         data = new Map<String, Dynamic>();
 
         for (key in Reflect.fields(parsed)) {
@@ -58,5 +60,9 @@ class ChromaSave
 
     public function save():Void {
         write(Json.stringify(data, "\t"));
+    }
+
+    public function saveFromJson():Void {
+        write(Json.stringify(json, '\t'));
     }
 }

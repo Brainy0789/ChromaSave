@@ -12,20 +12,33 @@ haxelib install chromasave
 
 ``` haxe
 import save.ChromaSave;
+import save.ChromaConvert;
 
 class Main
 {
     static function main()
     {
-        var chromaSave = new ChromaSave('save'); //the field is the filename saved in app data
+        // Create a new ChromaSave instance for the 'save' file
+        var chromaSave = new ChromaSave("save");
 
-        chromaSave.parse(); //parses the json and initializes the save data
+        // Parse existing JSON from disk (if it exists)
+        chromaSave.parse();
 
-        chromaSave.set('field', true); //add a field to the save data
+        // Add or update a field in the save data
+        chromaSave.set("field", true);
 
-        Sys.println(chromaSave.get('field')); //outputs 'true'
+        // Access the value
+        Sys.println(chromaSave.get("field")); // outputs 'true'
 
-        //There are other functions, but they aren't currently documented, as they are not not needed to use the system effectively.
+        // Write the current data to disk
+        chromaSave.save();
+
+        // --- Migrating from FlxSave ---
+        // Convert FlxG.save to a ChromaSave instance
+        chromaSave = ChromaConvert.fromFlxG("save");
+
+        //You can also use any FlxSave instance with this
+        chromaSave = ChromaConvert.convertFlxSave(FlxG.save);
     }
 }
 ```
