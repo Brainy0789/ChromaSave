@@ -12,7 +12,7 @@ haxelib install chromasave
 
 ``` haxe
 import save.ChromaSave;
-import save.ChromaConvert;
+import save.util.ChromaConvert;
 
 class Main
 {
