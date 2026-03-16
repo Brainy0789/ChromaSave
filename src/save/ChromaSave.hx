@@ -10,15 +10,24 @@ import Reflect;
 
 class ChromaSave
 {
+    public var EXT(default, set):String = 'json';
+
+    public function set_EXT(v:String)
+    {
+        saveFile = saveDir + save + '.$EXT';
+    }
+    
     public var json:Dynamic;
+    public var save = 'save';
     public var data:Map<String, Dynamic>;
     public var saveFile:String;
     public var saveDir:String;
 
     public function new(save:String)
     {
+        this.save = save;
         saveDir = System.applicationStorageDirectory;
-        saveFile = saveDir + save + ".json";
+        saveFile = saveDir + save + '.$EXT';
 
         if (!FileSystem.exists(saveDir)) {
             FileSystem.createDirectory(saveDir);
